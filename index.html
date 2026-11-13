@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Maria Fatima D. Macasinag | Portfolio</title>
+<meta name="description" content="Portfolio of Maria Fatima D. Macasinag, 3rd year IT student.">
+<style>
+:root{
+  --bg:#130b22; --bg2:#1c1232; --card:#221640; --ink:#f3ecff; --muted:#b4a6d0;
+  --lilac:#c19bff; --gold:#f4bb4a; --line:#3a2a5e;
+  --serif:Georgia,"Times New Roman",serif; --sans:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font:17px/1.7 var(--sans);overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+em{font-family:var(--serif);font-style:italic;color:var(--lilac);font-weight:400}
+section{max-width:1080px;margin:0 auto;padding:90px 24px 20px}
+
+/* top bar */
+.top{position:sticky;top:0;z-index:10;display:flex;justify-content:space-between;align-items:center;
+  padding:14px 28px;background:rgba(19,11,34,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.logo{font:700 1.2rem var(--serif);color:var(--gold);letter-spacing:.08em}
+.top nav{display:flex;gap:22px;font-size:.92rem;color:var(--muted)}
+.top nav a:hover{color:var(--gold)}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:50px;align-items:center;padding-top:70px;padding-bottom:70px}
+.eyebrow{color:var(--gold);letter-spacing:.25em;text-transform:uppercase;font-size:.78rem;margin-bottom:16px}
+h1{font:400 clamp(2.6rem,7vw,5rem)/1.02 var(--serif);letter-spacing:-.02em;margin-bottom:14px}
+.role{font-weight:600;color:var(--lilac);margin-bottom:16px}
+.intro{color:var(--muted);max-width:52ch;margin-bottom:28px}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:26px}
+.btn{padding:12px 24px;border-radius:999px;font-weight:600;font-size:.95rem;transition:.2s}
+.btn.solid{background:var(--gold);color:#2a1a00}
+.btn.solid:hover{transform:translateY(-2px)}
+.btn.line{border:1.5px solid var(--lilac);color:var(--lilac)}
+.btn.line:hover{background:var(--lilac);color:var(--bg)}
+.socials{display:flex;gap:18px;list-style:none;font-size:.9rem;color:var(--muted)}
+.socials a{border-bottom:1px solid var(--line);padding-bottom:2px}
+.socials a:hover{color:var(--gold);border-color:var(--gold)}
+
+.hero-photo{position:relative;justify-self:center;width:min(100%,360px)}
+.arch{border-radius:999px 999px 24px 24px;overflow:hidden;aspect-ratio:4/5.2;border:3px solid var(--gold);
+  box-shadow:14px 14px 0 var(--lilac);background:var(--card)}
+.arch img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
+.tag{position:absolute;background:var(--bg2);border:1px solid var(--lilac);color:var(--ink);
+  padding:8px 16px;border-radius:999px;font-size:.82rem;font-weight:600;white-space:nowrap}
+.t1{top:38px;left:-34px}.t2{bottom:34px;right:-24px;border-color:var(--gold)}
+
+/* ticker */
+.ticker{background:var(--gold);color:#2a1a00;overflow:hidden;white-space:nowrap;padding:12px 0;font:italic 1.15rem var(--serif);
+  transform:rotate(-1.2deg);margin:20px -10px}
+.ticker div{display:inline-flex;animation:slide 28s linear infinite}
+.ticker span{padding-right:0}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+/* headings */
+.num{font:700 .85rem var(--sans);color:var(--gold);letter-spacing:.3em;margin-bottom:6px}
+h2{font:400 clamp(2rem,5vw,3.2rem)/1.1 var(--serif);margin-bottom:36px}
+h3{font-size:1.1rem;font-weight:600}
+
+/* about */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px}
+.about-text p{color:var(--muted);margin-bottom:16px}
+.details{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:10px 24px}
+.details div{display:flex;justify-content:space-between;gap:16px;padding:13px 0;border-bottom:1px dashed var(--line);font-size:.95rem}
+.details div:last-child{border:0}
+.details dt{color:var(--muted)}
+.details dd{text-align:right;font-weight:600;word-break:break-word}
+.details a{color:var(--lilac)}
+
+/* timeline */
+.timeline{list-style:none;border-left:2px solid var(--lilac);margin-left:8px}
+.timeline li{position:relative;padding:0 0 38px 30px}
+.timeline li::before{content:"";position:absolute;left:-9px;top:6px;width:16px;height:16px;border-radius:50%;background:var(--gold);border:3px solid var(--bg)}
+.when{display:inline-block;font-size:.8rem;color:var(--gold);letter-spacing:.12em;text-transform:uppercase;margin-bottom:4px}
+.where{color:var(--lilac);font-size:.92rem}
+.timeline p:last-child{color:var(--muted);margin-top:6px}
+
+/* skills */
+.skill-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.skill-grid article{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px}
+.skill-grid h3{font-family:var(--serif);font-weight:400;font-size:1.4rem;color:var(--gold);margin-bottom:14px}
+.skill-grid ul{list-style:none;display:flex;flex-wrap:wrap;gap:8px}
+.skill-grid li{font-size:.88rem;padding:6px 13px;border-radius:999px;border:1px solid var(--lilac);color:var(--ink)}
+
+/* works */
+.works{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.work{position:relative;background:linear-gradient(160deg,var(--card),var(--bg2));border:1px solid var(--line);
+  border-radius:20px;padding:30px 26px;overflow:hidden;transition:.25s}
+.work:hover{transform:translateY(-6px);border-color:var(--gold)}
+.big{position:absolute;top:-6px;right:14px;font:italic 5rem var(--serif);color:rgba(193,155,255,.14)}
+.work h3{font:400 1.5rem var(--serif);margin:34px 0 10px}
+.work p{color:var(--muted);font-size:.95rem;margin-bottom:18px}
+.work a{color:var(--gold);font-weight:600;font-size:.92rem}
+
+/* contact */
+.contact{text-align:center;padding-bottom:70px}
+.lead{color:var(--muted);margin:-14px 0 22px}
+.mail{display:inline-block;font:italic clamp(1.1rem,4.2vw,2.2rem) var(--serif);color:var(--gold);
+  border-bottom:2px solid var(--gold);padding-bottom:4px;word-break:break-all;margin-bottom:40px}
+.contact-links{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;text-align:left}
+.contact-links a{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 20px;font-weight:600;word-break:break-word;transition:.2s}
+.contact-links a:hover{border-color:var(--lilac);transform:translateY(-3px)}
+.contact-links small{display:block;color:var(--lilac);font-size:.74rem;letter-spacing:.15em;text-transform:uppercase;margin-bottom:2px}
+
+footer{text-align:center;padding:26px 20px;border-top:1px solid var(--line);color:var(--muted);font-size:.85rem}
+
+a:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+
+@media (max-width:820px){
+  .hero,.about-grid{grid-template-columns:1fr}
+  .hero{padding-top:40px}
+  .hero-photo{order:-1;width:min(78%,300px)}
+  .t1{left:-10px}.t2{right:-10px}
+  .top nav{gap:14px;font-size:.82rem;overflow-x:auto}
+  section{padding-top:64px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.ticker div{animation:none}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <a class="logo" href="#home">M.F.</a>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#journey">Journey</a>
+    <a href="#skills">Skills</a>
+    <a href="#works">Works</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-text">
+    <p class="eyebrow">Portfolio · 2026</p>
+    <h1>Maria Fatima <em>Macasinag</em></h1>
+    <p class="role">IT Student · 3rd Year</p>
+    <!-- EDIT: your short intro -->
+    <p class="intro">Hi, I'm Fatima! I'm an IT student who loves turning ideas into things that work on screen. I'm always learning something new and building toward my future in tech.</p>
+    <div class="cta">
+      <a class="btn solid" href="#works">See my work</a>
+      <a class="btn line" href="#contact">Say hello</a>
+    </div>
+    <ul class="socials">
+      <li><a href="https://instagram.com/beb_dejesus" target="_blank" rel="noopener">Instagram</a></li>
+      <li><a href="https://www.facebook.com/search/top?q=Fatima%20Macasinag" target="_blank" rel="noopener">Facebook</a></li>
+      <li><a href="mailto:fatimamacasinag06@gmail.com">Email</a></li>
+    </ul>
+  </div>
+  <div class="hero-photo">
+    <div class="arch"><img src="profile.jpg" alt="Maria Fatima D. Macasinag"></div>
+    <span class="tag t1">22 yrs old</span>
+    <span class="tag t2">BS Information Technology</span>
+  </div>
+</section>
+
+<div class="ticker" aria-hidden="true">
+  <div><span>Hello, I'm Fatima ✦ IT Student ✦ Web Enthusiast ✦ Always Learning ✦ Hello, I'm Fatima ✦ IT Student ✦ Web Enthusiast ✦ Always Learning ✦ </span><span>Hello, I'm Fatima ✦ IT Student ✦ Web Enthusiast ✦ Always Learning ✦ Hello, I'm Fatima ✦ IT Student ✦ Web Enthusiast ✦ Always Learning ✦ </span></div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <p class="num">01</p>
+  <h2>About <em>me</em></h2>
+  <div class="about-grid">
+    <div class="about-text">
+      <!-- EDIT: each <p> is a paragraph -->
+      <p>I'm a 3rd year Information Technology student at CCDI. I enjoy learning how websites, apps, and systems are built, and I like solving problems one step at a time.</p>
+      <p>Write more about yourself here: why you chose IT, what you enjoy, and what kind of work you want to do after graduation.</p>
+    </div>
+    <dl class="details">
+      <div><dt>Name</dt><dd>Maria Fatima D. Macasinag</dd></div>
+      <div><dt>Age</dt><dd>22 years old</dd></div>
+      <div><dt>Birthday</dt><dd>November 6, 2004</dd></div>
+      <div><dt>Course</dt><dd>BS Information Technology</dd></div>
+      <div><dt>Year level</dt><dd>3rd Year</dd></div>
+      <div><dt>School</dt><dd>CCDI</dd></div>
+      <div><dt>Email</dt><dd><a href="mailto:fatimamacasinag06@gmail.com">fatimamacasinag06@gmail.com</a></dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- JOURNEY -->
+<section id="journey">
+  <p class="num">02</p>
+  <h2>My <em>journey</em></h2>
+  <ol class="timeline">
+    <li>
+      <span class="when">2023 – Present</span>
+      <h3>BS Information Technology</h3>
+      <p class="where">CCDI · 3rd Year</p>
+      <p>Studying programming, databases, web development, and networking.</p>
+    </li>
+    <li>
+      <span class="when">20XX – 20XX</span>
+      <h3>Senior High School</h3>
+      <p class="where">Your school name</p>
+      <p>Add your strand, awards, or activities here.</p>
+    </li>
+    <li>
+      <span class="when">Year</span>
+      <h3>Organization / Seminar / Certificate</h3>
+      <p class="where">Add where</p>
+      <p>Copy this block to add more to your journey.</p>
+    </li>
+  </ol>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <p class="num">03</p>
+  <h2>Skills &amp; <em>tools</em></h2>
+  <div class="skill-grid">
+    <article>
+      <h3>Web</h3>
+      <ul><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+    </article>
+    <article>
+      <h3>Programming</h3>
+      <ul><li>Python</li><li>Java</li><li>C++</li></ul>
+    </article>
+    <article>
+      <h3>Database</h3>
+      <ul><li>MySQL</li><li>SQL queries</li></ul>
+    </article>
+    <article>
+      <h3>Tools</h3>
+      <ul><li>Git &amp; GitHub</li><li>VS Code</li><li>Canva</li></ul>
+    </article>
+  </div>
+</section>
+
+<!-- WORKS -->
+<section id="works">
+  <p class="num">04</p>
+  <h2>Selected <em>works</em></h2>
+  <div class="works">
+    <!-- To add another project, copy this whole <article> block and paste it below -->
+    <article class="work">
+      <span class="big">01</span>
+      <h3>BrewPOS</h3>
+      <!-- EDIT: describe your project (what it does, who it's for, tools you used) -->
+      <p>A point-of-sale (POS) system project that I built as an IT student. Edit this line to describe its features and the tools you used.</p>
+      <a href="https://github.com/fatimamacasinag06-cmyk/BrewPos" target="_blank" rel="noopener">View on GitHub →</a>
+    </article>
+    <article class="work">
+      <span class="big">02</span>
+      <h3>Scientific Calculator</h3>
+      <p>A browser-based scientific calculator for performing calculations.</p>
+      <a href="calculator.html">Open calculator →</a>
+    </article>
+    <article class="work">
+      <span class="big">03</span>
+      <h3>Calendar</h3>
+      <p>An interactive calendar for viewing dates and organizing events.</p>
+      <a href="calendar.html">Open calendar →</a>
+    </article>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+  <p class="num">05</p>
+  <h2>Let's <em>connect</em></h2>
+  <p class="lead">Open for internships, projects, and new friends in tech.</p>
+  <a class="mail" href="mailto:fatimamacasinag06@gmail.com">fatimamacasinag06@gmail.com</a>
+  <div class="contact-links">
+    <a href="https://www.facebook.com/search/top?q=Fatima%20Macasinag" target="_blank" rel="noopener"><small>Facebook</small>Fatima Macasinag</a>
+    <a href="https://instagram.com/beb_dejesus" target="_blank" rel="noopener"><small>Instagram</small>@Beb_dejesus</a>
+    <a href="mailto:fatimamacasinag06@gmail.com"><small>Email</small>fatimamacasinag06@gmail.com</a>
+  </div>
+</section>
+
+</main>
+
+<footer>© <span id="y"></span> Maria Fatima D. Macasinag · IT 3rd Year Student</footer>
+<script>document.getElementById("y").textContent=new Date().getFullYear();</script>
+</body>
+</html>
